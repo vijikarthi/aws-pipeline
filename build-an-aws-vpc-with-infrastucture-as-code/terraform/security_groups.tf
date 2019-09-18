@@ -16,12 +16,6 @@ resource "aws_security_group" "bastion_elb" {
     protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
-
-  tags {
-    Name   = "bastion_elb_sg_${var.vpc_name}"
-    Author = "mlabouardy"
-    Tool   = "Terraform"
-  }
 }
 
 resource "aws_security_group" "bastion_host" {
@@ -41,11 +35,5 @@ resource "aws_security_group" "bastion_host" {
     to_port         = 22
     protocol        = "tcp"
     security_groups = ["${aws_security_group.bastion_elb.id}"]
-  }
-
-  tags {
-    Name   = "bastion_sg_${var.vpc_name}"
-    Author = "mlabouardy"
-    Tool   = "Terraform"
   }
 }

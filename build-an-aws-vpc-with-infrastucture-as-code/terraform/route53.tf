@@ -1,6 +1,6 @@
 resource "aws_route53_record" "bastion" {
   zone_id = "${var.hosted_zone_id}"
-  name    = "bastion.slowcoder.com"
+  name    = "bastion.insights.com"
   type    = "A"
 
   alias {

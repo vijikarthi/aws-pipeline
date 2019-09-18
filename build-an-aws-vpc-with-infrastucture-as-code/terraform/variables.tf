@@ -1,27 +1,34 @@
 //Global variables
 variable "region" {
   description = "AWS region"
+  default = "us-west-2"
 }
 
 variable "shared_credentials_file" {
   description = "AWS credentials file path"
+  default = "/Users/vsrinivasaraghavan/.aws/credentials"
 }
 
 variable "aws_profile" {
   description = "AWS profile"
+  default = "default"
 }
 
 variable "availability_zones" {
   type        = "list"
   description = "List of Availability Zones"
+  default = ["us-west-2a", "us-west-2b"]
 }
 
 variable "public_key" {
   description = "SSH public key"
+  #default = "/Users/vsrinivasaraghavan/Documents/vijay/project/aws-play/aws-pipeline/build-an-aws-vpc-with-infrastucture-as-code/install-key-private.pem"
+  default = "/Users/vsrinivasaraghavan/.ssh/id_rsa.pub"
 }
 
 variable "hosted_zone_id" {
   description = "Route53 zone id"
+  default = "Z2VZ0MMMN6L06S"
 }
 
 // Default variables

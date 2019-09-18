@@ -1,6 +1,7 @@
 // Bastion ELB
 resource "aws_elb" "bastion_hosts_elb" {
-  subnets                   = ["${aws_subnet.public_subnets.*.id}"]
+  #subnets                   = ["${aws_subnet.public_subnets.*.id}"]
+  subnets                   = ["${aws_subnet.public_subnets.0.id}"]
   cross_zone_load_balancing = true
   security_groups           = ["${aws_security_group.bastion_elb.id}"]
 
@@ -17,11 +18,5 @@ resource "aws_elb" "bastion_hosts_elb" {
     timeout             = 3
     target              = "TCP:22"
     interval            = 30
-  }
-
-  tags {
-    Name   = "bastion_elb_${var.vpc_name}"
-    Author = "mlabouardy"
-    Tool   = "Terraform"
   }
 }

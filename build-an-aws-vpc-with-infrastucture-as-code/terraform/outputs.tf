@@ -1,19 +1,19 @@
-output "VPC ID" {
+output "vpc_id" {
   value = "${aws_vpc.default.id}"
 }
 
-output "Public Subnets" {
+output "public_subnets" {
   value = "${aws_subnet.public_subnets.*.id}"
 }
 
-output "Private Subnets" {
+output "private_subnets" {
   value = "${aws_subnet.private_subnets.*.id}"
 }
 
-output "Bastion DNS" {
+output "bastion_dns" {
   value = "${aws_route53_record.bastion.name}"
 }
 
-output "Bastion SG ID" {
+output "bastion_sg_id" {
   value = "${aws_security_group.bastion_host.id}"
 }

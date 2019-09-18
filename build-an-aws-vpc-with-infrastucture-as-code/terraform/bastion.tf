@@ -15,7 +15,8 @@ resource "aws_launch_configuration" "bastion_conf" {
 resource "aws_autoscaling_group" "bastion_asg" {
   name                 = "bastion_asg_${var.vpc_name}"
   launch_configuration = "${aws_launch_configuration.bastion_conf.name}"
-  vpc_zone_identifier  = ["${aws_subnet.public_subnets.*.id}"]
+  #vpc_zone_identifier  = ["${aws_subnet.public_subnets.*.id}"]
+  vpc_zone_identifier  = ["${aws_subnet.public_subnets.0.id}"]
   load_balancers       = ["${aws_elb.bastion_hosts_elb.name}"]
   min_size             = 1
   max_size             = 1
@@ -32,7 +33,7 @@ resource "aws_autoscaling_group" "bastion_asg" {
 
   tag {
     key                 = "Author"
-    value               = "mlabouardy"
+    value               = "sasi"
     propagate_at_launch = true
   }
 
