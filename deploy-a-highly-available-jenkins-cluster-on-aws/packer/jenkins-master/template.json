@@ -1,7 +1,7 @@
 {
     "variables" : {
-        "region" : "eu-west-2",
-        "source_ami" : "ami-0274e11dced17bb5b"
+        "region" : "us-west-2",
+        "source_ami" : "ami-01bbe152bf19d0289"
     },
     "builders" : [
         {
@@ -18,7 +18,7 @@
             },
             "tags" : {
                 "Tool" : "Packer",
-                "Author" : "mlabouardy"
+                "Author" : "Sasi"
             }
         }
     ],
@@ -55,12 +55,12 @@
         },
         {
             "type" : "file",
-            "source" : "/Users/mlabouardy/.ssh/id_rsa",
+            "source" : "/Users/vsrinivasaraghavan/.ssh/id_rsa",
             "destination" : "/tmp/id_rsa"
         },
         {
             "type" : "file",
-            "source" : "/Users/mlabouardy/.ssh/id_rsa.pub",
+            "source" : "/Users/vsrinivasaraghavan/.ssh/id_rsa.pub",
             "destination" : "/tmp/id_rsa.pub"
         },
         {

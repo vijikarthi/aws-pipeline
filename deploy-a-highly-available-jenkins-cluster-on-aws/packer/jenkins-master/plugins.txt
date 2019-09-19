@@ -1,5 +1,6 @@
 ace-editor
 amazon-ecr
+anchore-container-scanner
 ant
 antisamy-markup-formatter
 apache-httpcomponents-client-4-api
